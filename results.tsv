@@ -1,0 +1,20 @@
+timestamp	commit	val_bpb	memory_gb	status	description
+2026-03-20T13:57:08	d550f1b	0.998329	66.5	keep	baseline (depth=10)
+2026-03-20T14:03:11	0dde193	0.997805	66.5	keep	increase matrix_lr from 0.04 to 0.06
+2026-03-20T14:09:12	52df5b2	1.000586	66.5	discard	increase matrix_lr from 0.06 to 0.08 (too high)
+2026-03-20T14:09:56	1187d27	0.000000	0.0	crash	increase depth from 10 to 12 (OOM)
+2026-03-20T14:16:27	bc8b01d	1.003826	47.8	discard	depth=12 with device_batch_size=64 (slower due to more grad accum)
+2026-03-20T14:22:24	1284705	0.996413	66.5	keep	increase embedding_lr from 0.6 to 0.8
+2026-03-20T14:28:20	273e9a4	1.000781	66.5	discard	add small warmup (warmup_ratio=0.02)
+2026-03-20T14:34:14	d90c5a6	0.998868	66.5	discard	increase warmdown_ratio from 0.5 to 0.6
+2026-03-20T14:40:10	41f7028	0.997034	66.5	discard	reduce weight_decay from 0.2 to 0.1
+2026-03-20T14:46:02	7cc4e17	0.979923	66.2	keep	reduce total_batch_size from 2**19 to 2**18
+2026-03-20T14:52:16	31257a8	0.986780	33.5	discard	total_batch=2**17 with device_batch=64 (too small)
+2026-03-20T14:58:07	f9b76a5	0.978511	66.2	keep	increase unembedding_lr from 0.004 to 0.008
+2026-03-20T14:59:05	4ab0563	0.000000	0.0	crash	increase aspect_ratio from 64 to 80 (OOM)
+2026-03-20T15:05:14	6b2a048	0.980137	66.2	discard	switch window_pattern from SSSL to L (all full attention)
+2026-03-20T15:13:36	7caff5b	0.983117	66.2	discard	increase softcap from 15 to 30
+2026-03-20T15:19:28	7acd8f2	0.980101	66.2	discard	reduce warmdown_ratio from 0.5 to 0.4
+2026-03-20T15:26:39	9523f4f	0.981619	67.5	discard	switch MLP from ReLU-squared to SwiGLU
+2026-03-20T15:36:39	abcb038	0.978277	66.2	keep	increase embedding_lr from 0.8 to 1.0
+2026-03-20T15:45:43	be994e0	0.978008	66.2	keep	increase adam beta1 from 0.8 to 0.85
